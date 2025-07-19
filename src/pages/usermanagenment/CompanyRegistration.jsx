@@ -43,8 +43,6 @@ const CompanyRegistration = () => {
     AccountNumber: "",
     IFSC: "",
     BankName: "",
-
-    
     companyReg: null,
     bankDetails: null,
     license: null,

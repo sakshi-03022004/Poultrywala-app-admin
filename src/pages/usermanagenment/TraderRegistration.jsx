@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+
+
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -41,6 +44,8 @@ const validationSchema = Yup.object({
     .required('Address Proof is required')
 });
 
+
+
 const TraderRegistration = () => {
   const initialValues = {
     name: '',
@@ -58,13 +63,28 @@ const TraderRegistration = () => {
     businessLicence: null,
     addressProof: null
   };
-
+  // const [cities,setCities] = useState([])
   const handleFileChange = (setFieldValue, field, e) => {
     setFieldValue(field, e.currentTarget.files[0]);
   };
 
+
+// const getAllCities = async () => {
+//   try {
+//     const response = await axios.get("http://192.168.1.9/contractApi/loginController.php/getCityList");
+//     console.log("Response:", response.data);
+//   } catch (error) {
+//     // console.error("API error:", error);
+//   }
+// };
+
+// useEffect(()=>{
+//    getAllCities()
+
+// },[])
+
   return (
-    <div className="max-w-[885px] mx-auto p-6 bg-white rounded shadow overflow-y-auto max-h-[90vh] dark:bg-slate-800">
+    <div className="p-3">
       <h2 className="text-3xl font-semibold mb-4 text-center dark:text-gray-100">Trader Registration</h2>
 
       <Formik
@@ -78,7 +98,7 @@ const TraderRegistration = () => {
       >
         {({ setFieldValue }) => (
           <Form>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 dark:text-gray-400">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4  dark:text-gray-400 py-5">
               <TextField  label="Full Name" name="name" />
               <TextField  label="Contact Number" name="contact" type="tel" />
               <TextField  label="Email Address" name="email" type="email" />
@@ -90,7 +110,6 @@ const TraderRegistration = () => {
               <TextField  label="Licence Number" name="licence" />
               <TextField  label="GST Number" name="gst" />
               <TextField  label="Account Number" name="accountNumber" />
-
               <FileUpload label="Upload Aadharcard" name="adharcard" onChange={handleFileChange} setFieldValue={setFieldValue} />
               <FileUpload label="Upload Business Licence" name="businessLicence" onChange={handleFileChange} setFieldValue={setFieldValue} />
               <FileUpload label="Upload Address Proof" name="addressProof" onChange={handleFileChange} setFieldValue={setFieldValue} />
@@ -126,7 +145,7 @@ const TextField = ({ label, name, type = 'text' }) => {
         as="input"
         name={name}
         type={type}
-        className="px-4 py-2 border rounded focus:outline-none focus:ring"
+        className=" px-4 py-2 border rounded focus:outline-none focus:ring"
         placeholder={`Enter ${label.toLowerCase()}`}
         onKeyPress={handleKeyPress}
       />
@@ -139,7 +158,7 @@ const TextField = ({ label, name, type = 'text' }) => {
   );
 };
 
-const FileUpload = ({ label, name, onChange, setFieldValue }) => (
+const FileUpload = ({ label, name, onChange,className, setFieldValue }) => (
   <div className="flex flex-col">
     <label className="mb-1 font-medium">{label}</label>
     <input
@@ -147,7 +166,7 @@ const FileUpload = ({ label, name, onChange, setFieldValue }) => (
       name={name}
       accept=".pdf,.jpg,.jpeg,.png"
       onChange={(e) => onChange(setFieldValue, name, e)}
-      className="px-4 py-2 border rounded focus:outline-none focus:ring"
+      className={`px-4 py-2 border rounded focus:outline-none focus:ring bg-white`}
     />
     <ErrorMessage
       name={name}

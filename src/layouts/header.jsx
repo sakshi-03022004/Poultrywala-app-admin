@@ -1,21 +1,20 @@
 import { useTheme } from "@/hooks/use-theme";
 
 import { Bell, ChevronsLeft, Moon, Search, Sun } from "lucide-react";
-
-import profileImg from "@/assets/profile-image.jpg";
-
 import PropTypes from "prop-types";
+import Modal from "./Modal";
+import { useState } from "react";
 
 export const Header = ({ collapsed, setCollapsed }) => {
     const { theme, setTheme } = useTheme();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <header className="relative z-10 flex h-[60px] items-center justify-between bg-white px-4 shadow-md transition-colors dark:bg-slate-900">
             <div className="flex items-center gap-x-3">
                 <button
                     className="btn-ghost size-10"
-                    onClick={() => setCollapsed(!collapsed)}
-                >
+                    onClick={() => setCollapsed(!collapsed)}>
                     <ChevronsLeft className={collapsed && "rotate-180"} />
                 </button>
                 <div className="input">
@@ -54,6 +53,11 @@ export const Header = ({ collapsed, setCollapsed }) => {
                         src={"https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"}    //{profileImg}
                         alt="profile image"
                         className="size-full object-cover"
+                         onClick={() => setIsOpen(true)}
+                    />
+                    <Modal
+                     isOpen={isOpen}
+                     setIsOpen={setIsOpen}  
                     />
                 </button>
             </div>
