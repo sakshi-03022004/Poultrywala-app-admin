@@ -344,6 +344,11 @@ export const navbarLinks = [
         title: "Payment & Invoicing",
         links: [
             {
+                label:"Accounts",
+                icon: ChevronRight,
+                path: "/accounts",
+            },
+            {
                 label: "Payments from Traders",
                 icon: ChevronRight,
                 path: "/payments-traders",
