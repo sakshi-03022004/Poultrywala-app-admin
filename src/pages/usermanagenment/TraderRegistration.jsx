@@ -69,19 +69,19 @@ const TraderRegistration = () => {
   };
 
 
-// const getAllCities = async () => {
-//   try {
-//     const response = await axios.get("http://192.168.1.9/contractApi/loginController.php/getCityList");
-//     console.log("Response:", response.data);
-//   } catch (error) {
-//     // console.error("API error:", error);
-//   }
-// };
+const getAllCities = async () => {
+  try {
+    const response = await axios.get("http://localhost/contractApi/loginController.php/getCityList");
+    console.log("Response:", response.data);
+  } catch (error) {
+    // console.error("API error:", error);
+  }
+};
 
-// useEffect(()=>{
-//    getAllCities()
+useEffect(()=>{
+   getAllCities()
 
-// },[])
+},[])
 
   return (
     <div className="p-3">
