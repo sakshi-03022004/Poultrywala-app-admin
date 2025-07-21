@@ -16,6 +16,7 @@ import CompanyProfile from "./pages/usermanagenment/CompanyProfile";
 import TraderOnbording from "./pages/usermanagenment/TraderOnbording";
 import QuickActions from "./pages/QuickActions"
 import TraderRequestView from "./pages/usermanagenment/TraderRequestView";
+import Accounts from "./pages/Disputes/Accounts";
 // import OnboardingTraderView from "./pages/usermanagenment/OnboardingTraderView";
 
 
@@ -43,6 +44,8 @@ function App() {
         { path: "trader-onbording", element: <TraderOnbording /> },
         { path: "quick-actions", element: <QuickActions /> },
         { path: "trader-request-view/:id", element: <TraderRequestView /> },
+        { path: "accounts", element: <Accounts /> },
+
 
         // 3. Order & Trade Management
         { path: "live-orders", element: <h1 className="title">Live Orders Feed</h1> },
@@ -52,9 +55,11 @@ function App() {
         { path: "payments-traders", element: <h1 className="title">Payments from Traders</h1> },
         { path: "payouts-companies", element: <h1 className="title">Payouts to Companies</h1> },
         { path: "generate-reports", element: <h1 className="title">Generate Reports</h1> },
+        { path: "accounts", element: <h1 className="text-2xl font-bold p-4">Accounts</h1> },
 
         // 5. Dispute & Complaint Resolution
         { path: "ticket-management", element: <h1 className="title">Ticket Management</h1> },
+
 
         // 6. Notifications & Communication
         { path: "system-alerts", element: <h1 className="title">System Alerts</h1> },
