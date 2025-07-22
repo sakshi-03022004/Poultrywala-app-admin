@@ -7,6 +7,7 @@ import DataTable from 'datatables.net-dt';
 
 export const tradersData = [
   {
+    id: 1,
     business: 'Gujarat Poultry Hub',
     name: 'Amit Patel',
     phone: '+91 9876543212',
@@ -17,10 +18,13 @@ export const tradersData = [
     pan: 'MNOPQ9012R',
     bankHolder: 'Amit Patel',
     ifsc: 'SBI0009012',
+    accountNo: '123456789012',
+    bankName: 'State Bank of India',
     status: 'Approved',
     about: 'Gujarat Poultry Hub is a premier poultry trading firm known for its high-quality supply of chicken and eggs across Gujarat. With years of industry experience, the company focuses on hygienic processing, ethical sourcing, and strong customer relationships, making it a trusted name in the poultry ecosystem.'
   },
   {
+    id: 2,
     business: 'Rajasthan Egg Mart',
     name: 'Sunil Sharma',
     phone: '+91 9876543213',
@@ -31,10 +35,13 @@ export const tradersData = [
     pan: 'QWERT1234A',
     bankHolder: 'Sunil Sharma',
     ifsc: 'PNB0002345',
+    accountNo: '234567890123',
+    bankName: 'Punjab National Bank',
     status: 'Pending',
     about: 'Rajasthan Egg Mart, based in Jaipur, supplies fresh eggs to retailers, restaurants, and bulk consumers. The business prides itself on timely delivery, competitive pricing, and maintaining freshness through a well-structured cold chain system.'
   },
   {
+    id: 3,
     business: 'Maharashtra Chicken Depot',
     name: 'Priya Deshmukh',
     phone: '+91 9876543214',
@@ -45,10 +52,13 @@ export const tradersData = [
     pan: 'ZXCVB6789T',
     bankHolder: 'Priya Deshmukh',
     ifsc: 'HDFC0005678',
+    accountNo: '345678901234',
+    bankName: 'HDFC Bank',
     status: 'Approved',
     about: 'Maharashtra Chicken Depot is a reputed poultry supplier in Pune serving both wholesale and retail clients. Known for its farm-fresh chicken and hygienic handling, the company ensures excellent quality control and transparent business practices.'
   },
   {
+    id: 4,
     business: 'Karnataka Poultry Distributors',
     name: 'Rahul Shetty',
     phone: '+91 9876543215',
@@ -59,10 +69,13 @@ export const tradersData = [
     pan: 'LKJHG3456M',
     bankHolder: 'Rahul Shetty',
     ifsc: 'ICIC0007890',
+    accountNo: '456789012345',
+    bankName: 'ICICI Bank',
     status: 'Rejected',
     about: 'Karnataka Poultry Distributors connects poultry farmers to major food chains and local butchers in the Bengaluru region. The company emphasizes local sourcing, ethical practices, and supporting small-scale poultry growers.'
   },
   {
+    id: 5,
     business: 'Chennai Chicken Center',
     name: 'Lakshmi Narayan',
     phone: '+91 9876543216',
@@ -73,10 +86,13 @@ export const tradersData = [
     pan: 'ASDFG1234P',
     bankHolder: 'Lakshmi Narayan',
     ifsc: 'IOBA0000123',
+    accountNo: '567890123456',
+    bankName: 'Indian Overseas Bank',
     status: 'Approved',
     about: 'Chennai Chicken Center is a local poultry store with a wide customer base in Tamil Nadu. The center is known for its prompt service, clean handling practices, and fresh poultry deliveries sourced directly from farms.'
   },
   {
+    id: 6,
     business: 'Uttar Pradesh Egg Supply',
     name: 'Akhil Verma',
     phone: '+91 9876543217',
@@ -87,10 +103,13 @@ export const tradersData = [
     pan: 'POIUY5678R',
     bankHolder: 'Akhil Verma',
     ifsc: 'UBIN0004567',
+    accountNo: '678901234567',
+    bankName: 'Union Bank of India',
     status: 'Pending',
     about: 'Uttar Pradesh Egg Supply operates a wide distribution network covering multiple districts. With a strong reputation for quality and quantity, the firm supplies eggs to institutions, local markets, and hospitality chains across the state.'
   },
   {
+    id: 7,
     business: 'Delhi Chicken Distributors',
     name: 'Nikita Arora',
     phone: '+91 9876543218',
@@ -101,10 +120,13 @@ export const tradersData = [
     pan: 'MNBVC3456L',
     bankHolder: 'Nikita Arora',
     ifsc: 'SBIN0003210',
+    accountNo: '789012345678',
+    bankName: 'State Bank of India',
     status: 'Approved',
     about: 'Delhi Chicken Distributors is a popular poultry supplier in the capital region, serving restaurants and meat shops with consistent, timely deliveries. The company has built trust through service quality, safety standards, and affordable pricing.'
   },
   {
+    id: 8,
     business: 'Punjab Poultry World',
     name: 'Harpreet Singh',
     phone: '+91 9876543219',
@@ -115,10 +137,13 @@ export const tradersData = [
     pan: 'GHJKL7890D',
     bankHolder: 'Harpreet Singh',
     ifsc: 'PUNB0011223',
+    accountNo: '890123456789',
+    bankName: 'Punjab National Bank',
     status: 'Approved',
     about: 'Punjab Poultry World is a modern poultry distributor with a mission to supply high-grade meat and eggs to Punjab’s consumers. The business follows strict hygienic protocols and maintains long-term farmer partnerships.'
   },
   {
+    id: 9,
     business: 'Bihar Egg Mart',
     name: 'Ravi Kumar',
     phone: '+91 9876543220',
@@ -129,10 +154,13 @@ export const tradersData = [
     pan: 'ERTYU1234Q',
     bankHolder: 'Ravi Kumar',
     ifsc: 'BOI0009988',
+    accountNo: '901234567890',
+    bankName: 'Bank of India',
     status: 'Rejected',
     about: 'Bihar Egg Mart serves the Patna region with fresh, quality-assured eggs delivered daily. Their operations are built on community support, reliable logistics, and affordability for both vendors and end users.'
   },
   {
+    id: 10,
     business: 'Haryana Poultry Market',
     name: 'Suman Malik',
     phone: '+91 9876543221',
@@ -143,10 +171,12 @@ export const tradersData = [
     pan: 'CVBNM4567Z',
     bankHolder: 'Suman Malik',
     ifsc: 'YESB0004433',
+    accountNo: '012345678901',
+    bankName: 'YES Bank',
     status: 'Pending',
     about: 'Haryana Poultry Market connects farm-fresh poultry with urban and rural buyers in northern India. Their flexible supply model and emphasis on customer satisfaction have helped them grow rapidly in Faridabad and beyond.'
   }
-]
+];
 
 
 let table = new DataTable('#myTable');
@@ -209,7 +239,7 @@ const ApprovedTraders = () => {
       // </div> */}
 
       {/* this is for search and filter option manually  */}
-      <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
   {/* Search input */}
   <input
     type="text"
@@ -306,7 +336,7 @@ const ApprovedTraders = () => {
               </td>
               <td className="p-4 text-center">
                 <button 
-                onClick={() => navigate(`/trader-registration/${index}`)} 
+                onClick={() => navigate(`/trader-profile/${trader.id}`)} 
                 className="text-green-600 active:scale-95">view</button>
               
               </td>

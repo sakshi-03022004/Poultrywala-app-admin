@@ -5,7 +5,7 @@ import 'remixicon/fonts/remixicon.css';
 
 const CompanyProfile = () => {
   const { id } = useParams();
-  const company = companiesData[parseInt(id)];
+  const company = companiesData.find(c => c.id === parseInt(id));
   const [activetab, setActivetab] = React.useState('profileoverview');
 
   // Dummy tab components (you can expand later)
@@ -32,20 +32,30 @@ const CompanyProfile = () => {
           />
           <p className="text-lg font-semibold text-gray-800 dark:text-gray-100 mt-4">{company.name}</p>
           <p className="text-sm text-gray-500"><i className="ri-mail-line"></i> {company.email}</p>
-          <p className="text-sm text-gray-500 mt-2"><i className="ri-map-pin-line"></i> {company.location}</p>
-          <p className="text-sm text-gray-500 mt-1">{company.district}</p>
 
-          <div className="mt-6 flex justify-between text-sm text-gray-600">
-            <p><i className="ri-building-4-line"></i> Business</p>
-            <p>{company.business}</p>
+
+           <div className=" p-4 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+            <div className="flex justify-between">
+                <span><i className="ri-map-pin-line mr-1"></i>Location</span>
+                <span>{company.location}</span>
+              </div>
+            <div className="flex justify-between">
+                 <span><i className="ri-building-4-line"></i>Buisness</span>
+                 <span>{company.business}</span>
+              </div>
+            <div className="flex justify-between">
+                 <span><i className="ri-phone-line"></i>Phone</span>
+                 <span>{company.phone}</span>
+              </div>      
+
+
+
+
+
           </div>
+         
 
-          <div className="flex justify-between text-sm text-gray-600">
-            <p><i className="ri-phone-line"></i> Phone</p>
-            <p>{company.phone}</p>
-          </div>
-
-          <div className="flex gap-6 justify-center mt-4 pb-6">
+          <div className="flex gap-14 justify-center mt-4 pb-6">
             <button className="px-6 py-2 bg-gray-100 dark:text-gray-100 border border-slate-500 rounded">Delete</button>
             <button className="px-6 py-2 bg-gray-100 dark:text-gray-100 border border-slate-500 rounded">Edit</button>
           </div>

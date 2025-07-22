@@ -5,18 +5,17 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
 import TraderOnboarding from "./pages/usermanagenment/TraderOnbording";
-import TraderRegistration from "./pages/usermanagenment/TraderRegistration";
 import CompanyOnboarding from "./pages/usermanagenment/CompanyOnbording";
+import TraderRegistration from "./pages/usermanagenment/TraderRegistration";
 import CompanyRegistration from "./pages/usermanagenment/CompanyRegistration";
 import ApprovedTraders from "./pages/usermanagenment/AproovedTraders";
-import OnboardingRequests from "./pages/usermanagenment/OnboardingRequests";
 import TraderProfile from "./pages/usermanagenment/TraderProfile";
 import AproovedCompanies from "./pages/usermanagenment/AproovedCompanies";
 import CompanyProfile from "./pages/usermanagenment/CompanyProfile";
-import TraderOnbording from "./pages/usermanagenment/TraderOnbording";
-import QuickActions from "./pages/QuickActions"
-import TraderRequestView from "./pages/usermanagenment/TraderRequestView";
-// import OnboardingTraderView from "./pages/usermanagenment/OnboardingTraderView";
+import QuickActions from "./routes/dashboard/QuickActions"
+import TraderRequestView from "./pages/usermanagenment/traderrequestview";
+import CompanyRequestView from "./pages/usermanagenment/CompanyRequestView";
+
 
 
 function App() {
@@ -32,17 +31,16 @@ function App() {
 
         // 2. User Management
         { path: "trader-onboarding", element: <TraderOnboarding /> },
+        { path: "company-onboarding", element: <CompanyOnboarding />},
         { path: "trader-registration", element: <TraderRegistration /> },
-        { path: "company-onboarding", element: <CompanyOnboarding /> },
         { path: "company-registration", element: <CompanyRegistration /> },
         { path: "approved-traders", element: <ApprovedTraders /> },
-        { path: "onboarding-requests", element: <OnboardingRequests /> },
-        { path: "trader-registration/:id", element: <TraderProfile /> },  
+        { path: "trader-profile/:id", element: <TraderProfile /> },  
         { path: "aprooved-companies", element: <AproovedCompanies /> },     
-        { path: "company-profile/:id", element: <CompanyProfile /> }, 
-        { path: "trader-onbording", element: <TraderOnbording /> },
+        { path: "company-profile/:id", element: <CompanyProfile /> },         
         { path: "quick-actions", element: <QuickActions /> },
         { path: "trader-request-view/:id", element: <TraderRequestView /> },
+        { path: "company-request-view/:id", element: <CompanyRequestView /> },
 
         // 3. Order & Trade Management
         { path: "live-orders", element: <h1 className="title">Live Orders Feed</h1> },

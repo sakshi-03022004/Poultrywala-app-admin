@@ -6,9 +6,10 @@ const QuickActions = () => {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-2">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
         {/* Trader Registration */}
-        <div className=" h-40 bg-white dark:bg-slate-800 shadow-lg rounded-xl p-6 w-80 flex flex-col justify-between">
+        <div className=" bg-white dark:bg-slate-800 shadow-lg rounded-xl p-4 w-80 flex flex-col">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
             Trader Registration
           </h2>
@@ -22,7 +23,7 @@ const QuickActions = () => {
         </div>
 
         {/* Company Registration */}
-        <div className="bg-white dark:bg-slate-800 shadow-lg rounded-xl p-6 w-80 flex flex-col justify-between">
+        <div className="bg-white dark:bg-slate-800 shadow-lg rounded-xl p-4 w-80 flex flex-col">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
             Company Registration
           </h2>

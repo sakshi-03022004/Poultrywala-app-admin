@@ -48,7 +48,7 @@ const CompanyRegistration = () => {
     companyReg: null,
     bankDetails: null,
     license: null,
-    fssai: null,
+    buisnessLicence: null,
   };
 
   const handleFileChange = (setFieldValue, field, e) => {
@@ -56,8 +56,8 @@ const CompanyRegistration = () => {
   };
 
   return (
-    <div className="max-w-[885px] mx-auto p-6 bg-white rounded shadow overflow-y-auto max-h-[90vh]">
-      <h2 className="text-3xl font-semibold mb-4 text-center">Company Registration</h2>
+    <div className="max-w-[885px] mx-auto p-2 bg-white rounded shadow overflow-y-auto max-h-[90vh]">
+      <h2 className="text-3xl font-semibold mb-2 text-center">Company Registration</h2>
 
       <Formik
         initialValues={initialValues}
@@ -68,6 +68,8 @@ const CompanyRegistration = () => {
       >
         {({ setFieldValue }) => (
           <Form>
+            <fieldset className="border p-1 rounded">
+              <legend className="text-base font-semibold"> Company Information</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <TextField label="Company Name" name="companyName" />
               <TextField label="Contact Number" name="contactPerson" />
@@ -76,13 +78,21 @@ const CompanyRegistration = () => {
                 name="scale"
                 options={["Small", "Medium", "Large"]}
               />
-              <TextField label="Farms Managed" name="farmsManaged" type="number" />
+               <TextField label="Farms Managed" name="farmsManaged" type="number" />
               <TextField label="Production Volume" name="productionVolume" />
               <TextField label="Service Area" name="serviceArea" />
+              </div>
+              </fieldset>
+              <fieldset className="border p-1 rounded">
+                <legend className="text-base font-semibold mb-1"> Bank Information</legend>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+             
               <TextField label="Account Holder Name" name="AccountHolderName" />
               <TextField label="Account Number" name="AccountNumber" type="text" />
               <TextField label="IFSC Code" name="IFSC" />
               <TextField label="Bank Name" name="BankName" />
+               </div>
+            </fieldset>
 
               {/* <FileUpload
                 label="Upload Company Registration"
@@ -102,13 +112,18 @@ const CompanyRegistration = () => {
                 setFieldValue={setFieldValue}
                 onChange={handleFileChange}
               /> */}
+              <fieldset className="border p-1 rounded">
+                <legend className="text-base font-semibold">Documents</legend>
+                <div className="grid grid-cols-1 md:grid-cols-2 mb-1">
               <FileUpload
-                label="Upload FSSAI (Optional)"
+                label="Upload Buisness Licence (Optional)"
                 name="fssai"
                 setFieldValue={setFieldValue}
                 onChange={handleFileChange}
               />
-            </div>
+              </div>
+              </fieldset>
+           
 
             <button
               type="submit"

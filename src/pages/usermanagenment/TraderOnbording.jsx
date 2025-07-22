@@ -1,262 +1,190 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export const mockTrader = [
   {
     id: 1,
-    name: "AgroFresh Pvt Ltd",
-    contactPerson: "Sunil Mehta",
-    scale: "Large",
-    farmsManaged: 12,
-    productionVolume: "5000 eggs/day",
+    name: "Sunil Mehta",
+    phone: "8463857264",
+    email: "sunil.mehta@gmail.com",
     serviceArea: "MP, Maharashtra",
+    district: "Bhopal",
     gstNumber: "23ABCDE1234F1Z1",
-    documents: {
-      registration: "Agro_Reg.pdf",
-      bank: "Agro_Bank.pdf",
-      license: "Agro_License.pdf",
-      fssai: "Agro_FSSAI.pdf",
-    },
+    pan: "ABCDE1234F",
+    bankHolder: "Sunil Mehta",
+    ifsc: "SBIN0001234",
+    accountNo: "1234567890",
+    bankName: "State Bank of India",
     verified: "Pending",
+    scale: "Large",
+    productionVolume: "5000 eggs/day",
+    about: "Sunil Mehta has over 15 years of experience in the poultry industry, supplying high-quality eggs across MP and Maharashtra. His farms are fully automated, and he ensures hygienic production and packaging. Known for timely deliveries and excellent customer service, Sunil focuses on sustainable farming practices and organic feed. He plans to expand his reach to Southern India soon."
   },
   {
     id: 2,
-    name: "Healthy Farms Ltd",
-    contactPerson: "Priya Singh",
-    scale: "Medium",
-    farmsManaged: 5,
-    productionVolume: "1500 chickens/day",
+    name: "Ravi Sharma",
+    phone: "9123456789",
+    email: "ravi.sharma@farmtraders.in",
     serviceArea: "UP, Bihar",
-    gstNumber: "09XYZAB4567C2Z2",
-    documents: {
-      registration: "Healthy_Reg.pdf",
-      bank: "Healthy_Bank.pdf",
-      license: "Healthy_License.pdf",
-      fssai: null,
-    },
+    district: "Varanasi",
+    gstNumber: "09FGHIJ5678K2Z2",
+    pan: "FGHIJ5678K",
+    bankHolder: "Ravi Sharma",
+    ifsc: "HDFC0005678",
+    accountNo: "2345678901",
+    bankName: "HDFC Bank",
     verified: "Approved",
+    scale: "Medium",
+    productionVolume: "3000 eggs/day",
+    about: "Ravi Sharma runs a mid-scale poultry business and is known for quality eggs and consistent supply. Based in Varanasi, he primarily serves markets in UP and Bihar. Ravi emphasizes humane poultry practices, eco-friendly packaging, and cost-effective supply chains. He has built strong relationships with local vendors and aims to become a top poultry distributor in Northern India."
   },
   {
     id: 3,
-    name: "Green Valley Poultry",
-    contactPerson: "Ravi Kumar",
-    scale: "Small",
-    farmsManaged: 3,
-    productionVolume: "800 eggs/day",
-    serviceArea: "Delhi, Haryana",
-    gstNumber: "07GHJKL7890D3Z3",
-    documents: {
-      registration: "Green_Reg.pdf",
-      bank: "Green_Bank.pdf",
-      license: "Green_License.pdf",
-      fssai: "Green_FSSAI.pdf",
-    },
+    name: "Anjali Verma",
+    phone: "7984563210",
+    email: "anjali.verma@poultrymart.com",
+    serviceArea: "Rajasthan, Gujarat",
+    district: "Jaipur",
+    gstNumber: "08KLMNO3456P3Z3",
+    pan: "KLMNO3456P",
+    bankHolder: "Anjali Verma",
+    ifsc: "ICIC0003456",
+    accountNo: "3456789012",
+    bankName: "ICICI Bank",
     verified: "Declined",
+    scale: "Small",
+    productionVolume: "1200 eggs/day",
+    about: "Anjali Verma is a small-scale trader focused on supplying organic and chemical-free eggs to local markets in Jaipur and Ahmedabad. Despite her scale, she maintains high standards of cleanliness and quality. Her goal is to gain more certifications and expand her distribution. She often partners with women-led co-operatives to support rural employment."
   },
   {
     id: 4,
-    name: "Organic Chickens Co.",
-    contactPerson: "Neha Rathi",
-    scale: "Medium",
-    farmsManaged: 6,
-    productionVolume: "2000 chickens/day",
-    serviceArea: "Rajasthan, Gujarat",
-    gstNumber: "08MNOPQ1234E4Z4",
-    documents: {
-      registration: "Organic_Reg.pdf",
-      bank: "Organic_Bank.pdf",
-      license: "Organic_License.pdf",
-      fssai: "Organic_FSSAI.pdf",
-    },
-    verified: "Pending",
+    name: "Rajeev Yadav",
+    phone: "8877665544",
+    email: "rajeev.yadav@agrilink.in",
+    serviceArea: "Punjab, Haryana",
+    district: "Ludhiana",
+    gstNumber: "03PQRST6789U4Z4",
+    pan: "PQRST6789U",
+    bankHolder: "Rajeev Yadav",
+    ifsc: "PNB0007890",
+    accountNo: "4567890123",
+    bankName: "Punjab National Bank",
+    verified: "Approved",
+    scale: "Large",
+    productionVolume: "6000 eggs/day",
+    about: "Rajeev Yadav is a seasoned poultry entrepreneur with automated farms in Punjab. He maintains high biosecurity standards and supplies to major retailers and hotels. With a robust cold chain logistics system, Rajeev has built a reputation for reliability and freshness. His future plan includes exporting eggs and setting up a training center for new farmers."
   },
   {
     id: 5,
-    name: "Eggland Farms",
-    contactPerson: "Amit Patel",
-    scale: "Large",
-    farmsManaged: 10,
-    productionVolume: "4000 eggs/day",
-    serviceArea: "Punjab, HP",
-    gstNumber: "03RSTUV5678F5Z5",
-    documents: {
-      registration: "Eggland_Reg.pdf",
-      bank: "Eggland_Bank.pdf",
-      license: "Eggland_License.pdf",
-      fssai: null,
-    },
-    verified: "Approved",
+    name: "Kiran Joshi",
+    phone: "9345621789",
+    email: "kiran.joshi@eggsupply.com",
+    serviceArea: "Goa, Karnataka",
+    district: "Panaji",
+    gstNumber: "30ABCDE1234F5Z5",
+    pan: "ABCDE1234F",
+    bankHolder: "Kiran Joshi",
+    ifsc: "BOI0007890",
+    accountNo: "5678901234",
+    bankName: "Bank of India",
+    verified: "Pending",
+    scale: "Medium",
+    productionVolume: "2800 eggs/day",
+    about: "Kiran Joshi has been active in the coastal egg distribution business, supplying to local supermarkets and beach resorts. With strong logistics and an eye for quality, she handles timely deliveries even in remote areas. Kiran is currently working on a tech-based inventory system to better manage orders and reduce spoilage."
   },
   {
     id: 6,
-    name: "Sunrise Poultry",
-    contactPerson: "Sunita Verma",
-    scale: "Small",
-    farmsManaged: 2,
-    productionVolume: "600 chickens/day",
-    serviceArea: "Chandigarh",
-    gstNumber: "04WXYZA9012G6Z6",
-    documents: {
-      registration: "Sunrise_Reg.pdf",
-      bank: "Sunrise_Bank.pdf",
-      license: "Sunrise_License.pdf",
-      fssai: "Sunrise_FSSAI.pdf",
-    },
-    verified: "Pending",
+    name: "Amit Rawat",
+    phone: "9812345670",
+    email: "amit.rawat@poultryworld.in",
+    serviceArea: "Delhi, NCR",
+    district: "Noida",
+    gstNumber: "07FGHIJ1234V6Z6",
+    pan: "FGHIJ1234V",
+    bankHolder: "Amit Rawat",
+    ifsc: "AXIS0001234",
+    accountNo: "6789012345",
+    bankName: "Axis Bank",
+    verified: "Approved",
+    scale: "Large",
+    productionVolume: "7000 eggs/day",
+    about: "Amit Rawat runs one of the most organized poultry supply businesses in NCR. His company supplies to retail chains, food delivery services, and hospitals. Amit emphasizes data-driven operations, quality control labs, and zero-waste farming. He's recently started investing in solar-powered facilities to lower carbon emissions."
   },
   {
     id: 7,
-    name: "Happy Hens India",
-    contactPerson: "Rajeev Joshi",
-    scale: "Medium",
-    farmsManaged: 4,
-    productionVolume: "1200 eggs/day",
-    serviceArea: "Jharkhand, Chhattisgarh",
-    gstNumber: "20ABCDEF3456H7Z7",
-    documents: {
-      registration: "Happy_Reg.pdf",
-      bank: "Happy_Bank.pdf",
-      license: "Happy_License.pdf",
-      fssai: null,
-    },
+    name: "Neha Patel",
+    phone: "9321009988",
+    email: "neha.patel@greeneggs.in",
+    serviceArea: "Maharashtra, Gujarat",
+    district: "Surat",
+    gstNumber: "24KLMNO9876W7Z7",
+    pan: "KLMNO9876W",
+    bankHolder: "Neha Patel",
+    ifsc: "YESB0002345",
+    accountNo: "7890123456",
+    bankName: "Yes Bank",
     verified: "Declined",
+    scale: "Small",
+    productionVolume: "1000 eggs/day",
+    about: "Neha Patel started her egg business as a student project, which later grew into a small organic poultry farm. Her focus is on cage-free hens and hormone-free feed. She promotes ethical farming and partners with NGOs to spread awareness about healthy food habits. Her business, although small, has a loyal customer base."
   },
   {
     id: 8,
-    name: "Urban Chicken Mart",
-    contactPerson: "Manish Gupta",
+    name: "Sanjay Gupta",
+    phone: "9001234567",
+    email: "sanjay.gupta@farmxpress.com",
+    serviceArea: "Chhattisgarh, Odisha",
+    district: "Raipur",
+    gstNumber: "22XYZAB1234D8Z8",
+    pan: "XYZAB1234D",
+    bankHolder: "Sanjay Gupta",
+    ifsc: "UBIN0004321",
+    accountNo: "8901234567",
+    bankName: "Union Bank",
+    verified: "Pending",
     scale: "Medium",
-    farmsManaged: 5,
-    productionVolume: "1300 chickens/day",
-    serviceArea: "Delhi NCR",
-    gstNumber: "07LMNOP6789I8Z8",
-    documents: {
-      registration: "Urban_Reg.pdf",
-      bank: "Urban_Bank.pdf",
-      license: "Urban_License.pdf",
-      fssai: "Urban_FSSAI.pdf",
-    },
-    verified: "Approved",
+    productionVolume: "3500 eggs/day",
+    about: "Sanjay Gupta operates a chain of egg farms in semi-urban and tribal belts, providing jobs to locals. His team focuses on low-cost but high-nutrition egg varieties. Sanjay has collaborated with state programs to enhance food security and improve dietary habits among children in rural schools."
   },
   {
     id: 9,
-    name: "Prime Agro Solutions",
-    contactPerson: "Vikash Singh",
-    scale: "Large",
-    farmsManaged: 15,
-    productionVolume: "6000 eggs/day",
-    serviceArea: "UP, MP",
-    gstNumber: "09QRSTU1234J9Z9",
-    documents: {
-      registration: "Prime_Reg.pdf",
-      bank: "Prime_Bank.pdf",
-      license: "Prime_License.pdf",
-      fssai: "Prime_FSSAI.pdf",
-    },
+    name: "Pooja Iyer",
+    phone: "9101234567",
+    email: "pooja.iyer@eggdelights.in",
+    serviceArea: "Tamil Nadu, Kerala",
+    district: "Chennai",
+    gstNumber: "33LMNOP5432Z9Z9",
+    pan: "LMNOP5432Z",
+    bankHolder: "Pooja Iyer",
+    ifsc: "KARB0005432",
+    accountNo: "9012345678",
+    bankName: "Karnataka Bank",
     verified: "Approved",
+    scale: "Large",
+    productionVolume: "6500 eggs/day",
+    about: "Pooja Iyer manages a modern poultry unit with automatic grading and quality control systems. She is known for her fresh supply chains to hotels, bakeries, and online grocery services. Pooja believes in customer satisfaction and has introduced recyclable cartons and a loyalty program for bulk buyers."
   },
   {
     id: 10,
-    name: "ChickMate Ltd.",
-    contactPerson: "Kavita Desai",
-    scale: "Small",
-    farmsManaged: 2,
-    productionVolume: "400 chickens/day",
-    serviceArea: "Maharashtra",
-    gstNumber: "27VWXYZ4567K0Z0",
-    documents: {
-      registration: "ChickMate_Reg.pdf",
-      bank: "ChickMate_Bank.pdf",
-      license: "ChickMate_License.pdf",
-      fssai: null,
-    },
-    verified: "Pending",
-  },
-  {
-    id: 11,
-    name: "NestEggs Co.",
-    contactPerson: "Rakesh Sharma",
-    scale: "Medium",
-    farmsManaged: 7,
-    productionVolume: "2500 eggs/day",
-    serviceArea: "Karnataka, Goa",
-    gstNumber: "29ABCDE1234L1Z1",
-    documents: {
-      registration: "NestEggs_Reg.pdf",
-      bank: "NestEggs_Bank.pdf",
-      license: "NestEggs_License.pdf",
-      fssai: "NestEggs_FSSAI.pdf",
-    },
-    verified: "Approved",
-  },
-  {
-    id: 12,
-    name: "Daily Eggs Corner",
-    contactPerson: "Mohit Rana",
-    scale: "Small",
-    farmsManaged: 3,
-    productionVolume: "750 eggs/day",
-    serviceArea: "Uttarakhand",
-    gstNumber: "05XYZAB4567M2Z2",
-    documents: {
-      registration: "DailyEggs_Reg.pdf",
-      bank: "DailyEggs_Bank.pdf",
-      license: "DailyEggs_License.pdf",
-      fssai: null,
-    },
+    name: "Manoj Tiwari",
+    phone: "9876543210",
+    email: "manoj.tiwari@poultryhub.in",
+    serviceArea: "Jharkhand, West Bengal",
+    district: "Ranchi",
+    gstNumber: "20QRSTU9876X0Z0",
+    pan: "QRSTU9876X",
+    bankHolder: "Manoj Tiwari",
+    ifsc: "IOBA0003210",
+    accountNo: "0123456789",
+    bankName: "Indian Overseas Bank",
     verified: "Declined",
-  },
-  {
-    id: 13,
-    name: "FarmFresh Foods",
-    contactPerson: "Anil Mehta",
-    scale: "Large",
-    farmsManaged: 13,
-    productionVolume: "4800 chickens/day",
-    serviceArea: "Rajasthan, Gujarat",
-    gstNumber: "08NOPQR6789N3Z3",
-    documents: {
-      registration: "FarmFresh_Reg.pdf",
-      bank: "FarmFresh_Bank.pdf",
-      license: "FarmFresh_License.pdf",
-      fssai: "FarmFresh_FSSAI.pdf",
-    },
-    verified: "Pending",
-  },
-  {
-    id: 14,
-    name: "PoultryPro Services",
-    contactPerson: "Rajiv Bansal",
-    scale: "Large",
-    farmsManaged: 14,
-    productionVolume: "5200 eggs/day",
-    serviceArea: "Haryana, Punjab",
-    gstNumber: "06GHIJK1234O4Z4",
-    documents: {
-      registration: "PoultryPro_Reg.pdf",
-      bank: "PoultryPro_Bank.pdf",
-      license: "PoultryPro_License.pdf",
-      fssai: "PoultryPro_FSSAI.pdf",
-    },
-    verified: "Approved",
-  },
-  {
-    id: 15,
-    name: "Bharat Poultry House",
-    contactPerson: "Mahesh Yadav",
-    scale: "Medium",
-    farmsManaged: 8,
-    productionVolume: "1800 chickens/day",
-    serviceArea: "Madhya Pradesh, Chhattisgarh",
-    gstNumber: "23LMNOP5678P5Z5",
-    documents: {
-      registration: "Bharat_Reg.pdf",
-      bank: "Bharat_Bank.pdf",
-      license: "Bharat_License.pdf",
-      fssai: null,
-    },
-    verified: "Pending",
+    scale: "Small",
+    productionVolume: "1500 eggs/day",
+    about: "Manoj Tiwari is an independent trader supplying fresh eggs to schools and local groceries. He focuses on rural markets, maintaining low prices without compromising quality. Manoj’s vision is to build a cold storage unit to preserve unsold stock and minimize waste. He is also training youth in poultry basics."
   }
 ];
+
+
 
 
 const statusColors = {
@@ -266,16 +194,24 @@ const statusColors = {
 };
 
 export default function TraderOnboarding() {
-  const [selectedTrader, setSelectedTrader] = useState(null);
+  const [search, setSearch] = useState("");
   const [District, setDistrict] = useState("");
-  const [status,setStatus] = useState("");
+  const [state,setState] = useState("");
   const navigate = useNavigate();
 
   const filteredTrader = mockTrader.filter((trader) => {
-    const matchesStatus = ["Pending", "Declined"].includes(trader.verified)
+     const matchesSearch =
+      [trader.name, trader.serviceArea, trader.contactPerson,].some((field) =>
+        field.toLowerCase().includes(search.toLowerCase())
+      );
+    const matchesState = state ? trader.serviceArea.includes(state): true;
     const matchesDistrict = District ? trader.serviceArea.includes(District) : true;
-    return matchesStatus && matchesDistrict;
+
+    const isNotAprooved = trader.verified !== "Approved";
+    return matchesSearch && matchesState && matchesDistrict && isNotAprooved;
+    
   });
+
 
   return (
     <div className="p-6">
@@ -289,17 +225,47 @@ export default function TraderOnboarding() {
         </button> */}
       </div>
 
-      <div className="flex gap-4 mb-4">
-        <select
-          value={status}
-          onChange={(e) =>setStatus(e.target.value)}
-          className="p-2 border rounded"
-        >
-          <option value="">All Status</option>
-          <option value="pending">Pending</option>
-          <option value="declined">Declined</option>
-        </select>
+
+            <p className="text-sm text-gray-500 mb-4">Manage and monitor onboarding trader requests</p>
+
+
+      <div >
+        <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <input 
+          type="text"
+          placeholder="Search companies by name, head name, phone... "
+          className="w-full md:w-1/3 p-2 border rounded-lg"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+           />
+           <div className="flex gap-2 w-full md:w-auto">
+            <select 
+             value={District}
+             onChange={(e) => setDistrict(e.target.value)}
+             className="p-2 border  rounded-lg transition"
+             >
+            <option value="">All Districts</option>
+            <option value="MP">Bhopal</option>
+             </select>
+          <select
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            className="p-2 border  rounded-lg transition"
+          >
+            <option value="">All State</option>
+            <option value="Rajasthan">Rajsthan</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharastra">Maharashtra</option>
+
+            
+          </select>
+          
+        </div>
+
+        </div>
+        
       </div>
+     
 
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm border-slate-300 dark:border-gray-700">
@@ -323,7 +289,7 @@ export default function TraderOnboarding() {
                 className="border-t dark:border-slate-700 text-left justify-between dark:text-gray-200"
               >
                 <td className="p-4 text-center">{trader.name}</td>
-                <td className="p-4 text-center">{trader.contactPerson}</td>
+                <td className="p-4 text-center">{trader.phone}</td>
                 <td className="p-4 text-center">{trader.scale}</td>
                 <td className="p-4 text-center">{trader.serviceArea}</td>
                 <td className="p-4 text-center">{trader.productionVolume}</td>
@@ -353,6 +319,17 @@ export default function TraderOnboarding() {
           </tbody>
         </table>
       </div>
+       <div className="flex justify-between items-center mt-4 text-sm">
+              <span className="text-left px-2 py-1 dark:text-gray-300">
+                Showing {filteredTrader.length > 0 ? 1 : 0} to {filteredTrader.length} of {mockTrader.length} results
+              </span>
+              <div className="space-x-2 text-right">
+                <button className="px-2 py-1 m-2 bg-gray-200 rounded">Previous</button>
+                <button className="px-2 py-1 m-2 bg-green-500 text-white rounded">1</button>
+                <button className="px-2 py-1 m-2 bg-gray-200 rounded">2</button>
+                <button className="px-2 py-1 m-2 bg-gray-200 rounded">Next</button>
+              </div>
+            </div>
     </div>
   );
 }

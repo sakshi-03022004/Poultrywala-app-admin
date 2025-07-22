@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import 'remixicon/fonts/remixicon.css'; // Import Remix Icon CSS
 import { useNavigate } from 'react-router-dom';
 
-
 export const companiesData = [
   {
+    id: 1,
     business: 'Gujarat Poultry Hub',
     name: 'Amit Patel',
     phone: '+91 9876543212',
@@ -19,6 +19,7 @@ export const companiesData = [
     about: 'Gujarat Poultry Hub is a premier poultry trading firm known for its high-quality supply of chicken and eggs across Gujarat. With years of industry experience, the company focuses on hygienic processing, ethical sourcing, and strong customer relationships, making it a trusted name in the poultry ecosystem.'
   },
   {
+    id: 2,
     business: 'Rajasthan Egg Mart',
     name: 'Sunil Sharma',
     phone: '+91 9876543213',
@@ -33,6 +34,7 @@ export const companiesData = [
     about: 'Rajasthan Egg Mart, based in Jaipur, supplies fresh eggs to retailers, restaurants, and bulk consumers. The business prides itself on timely delivery, competitive pricing, and maintaining freshness through a well-structured cold chain system.'
   },
   {
+    id: 3,
     business: 'Maharashtra Chicken Depot',
     name: 'Priya Deshmukh',
     phone: '+91 9876543214',
@@ -47,6 +49,7 @@ export const companiesData = [
     about: 'Maharashtra Chicken Depot is a reputed poultry supplier in Pune serving both wholesale and retail clients. Known for its farm-fresh chicken and hygienic handling, the company ensures excellent quality control and transparent business practices.'
   },
   {
+    id: 4,
     business: 'Karnataka Poultry Distributors',
     name: 'Rahul Shetty',
     phone: '+91 9876543215',
@@ -61,6 +64,7 @@ export const companiesData = [
     about: 'Karnataka Poultry Distributors connects poultry farmers to major food chains and local butchers in the Bengaluru region. The company emphasizes local sourcing, ethical practices, and supporting small-scale poultry growers.'
   },
   {
+    id: 5,
     business: 'Chennai Chicken Center',
     name: 'Lakshmi Narayan',
     phone: '+91 9876543216',
@@ -75,6 +79,7 @@ export const companiesData = [
     about: 'Chennai Chicken Center is a local poultry store with a wide customer base in Tamil Nadu. The center is known for its prompt service, clean handling practices, and fresh poultry deliveries sourced directly from farms.'
   },
   {
+    id: 6,
     business: 'Uttar Pradesh Egg Supply',
     name: 'Akhil Verma',
     phone: '+91 9876543217',
@@ -89,6 +94,7 @@ export const companiesData = [
     about: 'Uttar Pradesh Egg Supply operates a wide distribution network covering multiple districts. With a strong reputation for quality and quantity, the firm supplies eggs to institutions, local markets, and hospitality chains across the state.'
   },
   {
+    id: 7,
     business: 'Delhi Chicken Distributors',
     name: 'Nikita Arora',
     phone: '+91 9876543218',
@@ -103,6 +109,7 @@ export const companiesData = [
     about: 'Delhi Chicken Distributors is a popular poultry supplier in the capital region, serving restaurants and meat shops with consistent, timely deliveries. The company has built trust through service quality, safety standards, and affordable pricing.'
   },
   {
+    id: 8,
     business: 'Punjab Poultry World',
     name: 'Harpreet Singh',
     phone: '+91 9876543219',
@@ -117,6 +124,7 @@ export const companiesData = [
     about: 'Punjab Poultry World is a modern poultry distributor with a mission to supply high-grade meat and eggs to Punjab’s consumers. The business follows strict hygienic protocols and maintains long-term farmer partnerships.'
   },
   {
+    id: 9,
     business: 'Bihar Egg Mart',
     name: 'Ravi Kumar',
     phone: '+91 9876543220',
@@ -131,6 +139,7 @@ export const companiesData = [
     about: 'Bihar Egg Mart serves the Patna region with fresh, quality-assured eggs delivered daily. Their operations are built on community support, reliable logistics, and affordability for both vendors and end users.'
   },
   {
+    id: 10,
     business: 'Haryana Poultry Market',
     name: 'Suman Malik',
     phone: '+91 9876543221',
@@ -144,7 +153,8 @@ export const companiesData = [
     status: 'Pending',
     about: 'Haryana Poultry Market connects farm-fresh poultry with urban and rural buyers in northern India. Their flexible supply model and emphasis on customer satisfaction have helped them grow rapidly in Faridabad and beyond.'
   }
-]
+];
+
 
 
 import DataTable from 'datatables.net-dt';
@@ -281,7 +291,7 @@ const AproovedCompanies = () => {
                 </td>
                 <td className="p-4 text-center">
                   <button
-                    onClick={() => navigate(`/company-profile/${index}`)}
+                    onClick={() => navigate(`/company-profile/${company.id}`)}
                     className="text-green-600 active:scale-95"
                   >
                     view
