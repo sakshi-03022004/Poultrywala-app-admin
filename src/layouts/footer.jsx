@@ -1,3 +1,6 @@
+
+import TestComponent from "../Company/testingApiComponents";
+
 export const Footer = () => {
     return (
         <footer className="flex flex-wrap items-center justify-between gap-4 pt-4">
@@ -15,6 +18,8 @@ export const Footer = () => {
                 >
                     Terms of Service
                 </a>
+             <TestComponent/>
+
             </div>
         </footer>
     );
