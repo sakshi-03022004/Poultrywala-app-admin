@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useSearchParams,useNavigate } from 'react-router-dom';
 import { mockCompanies } from './CompanyOnbording';
 import 'remixicon/fonts/remixicon.css';
 
 const CompanyRequestView = () => {
   const { id } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const defaultTab = searchParams.get("tab") || "profileoverview";
+  const [activeTab, setActivetab] = useState(defaultTab);
+
+  const navigate = useNavigate();
+
   const company = mockCompanies.find(c => c.id === parseInt(id));
-  const [activeTab, setActiveTab] = useState('profileoverview');
+
+  useEffect(() => {
+    setSearchParams({ tab: activeTab }, { replace: true });
+  }, [activeTab, setSearchParams]);
 
   if (!company) return <div className="p-6 text-red-500">Company not found</div>;
+
+  const tabs = [
+    { key: "profileoverview", label: "Profile Overview" },
+    { key: "documents", label: "Documents" }
+  ];
 
   const ProfileOverviewComponent = () => (
     <div className="p-4 text-sm text-gray-800 dark:text-gray-100">
@@ -31,15 +45,24 @@ const CompanyRequestView = () => {
         <p>
           <strong>Status:</strong>{' '}
           <span className={`ml-2 px-2 py-1 rounded text-xs font-medium ${
-            company.status === 'Approved'
+            company.verified === 'Declined'
               ? 'bg-green-100 text-green-700'
-              : company.status === 'Pending'
+              : company.verified === 'Pending'
               ? 'bg-yellow-100 text-yellow-700'
               : 'bg-red-100 text-red-700'
           }`}>
-            {company.status}
+            {company.verified}
           </span>
         </p>
+        
+      </div>
+       <div className="mt-8 text-right">
+        <button
+          onClick={() => {}}
+          className="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-900 transition"
+        >
+          Edit
+        </button>
       </div>
     </div>
   );
@@ -49,20 +72,9 @@ const CompanyRequestView = () => {
       <h3 className="text-lg font-bold mb-4">Submitted Documents</h3>
       <ul className="space-y-3 text-sm text-gray-800 dark:text-gray-200">
         <li>
-          <span className="font-medium">GST Certificate:</span>{' '}
-          <a href="#" className="text-blue-600 hover:underline">Download GST_Certificate.pdf</a>
-        </li>
-        <li>
-          <span className="font-medium">PAN Card:</span>{' '}
-          <a href="#" className="text-blue-600 hover:underline">Download PAN_Card.jpg</a>
-        </li>
-        <li>
-          <span className="font-medium">Cancelled Cheque:</span>{' '}
-          <a href="#" className="text-blue-600 hover:underline">Download Cheque_Image.png</a>
-        </li>
-        <li>
-          <span className="font-medium">Company Registration:</span>{' '}
-          <a href="#" className="text-blue-600 hover:underline">Download Company_Registration.pdf</a>
+          <span className="font-medium">Buisness Licence:</span>{' '}
+          <img className='rounded-xl object-cover'  src={company.documentUrl} alt="Buisness Licence" />
+          <a href="#" className='text-blue-600 hover:underline'></a>
         </li>
       </ul>
     </div>
@@ -70,10 +82,12 @@ const CompanyRequestView = () => {
 
   return (
     <div className="p-2 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-semibold m-2 text-gray-800 dark:text-gray-100 font-sans">Company Profile Review</h2>
+      <h2 className="text-3xl font-semibold m-2 text-gray-800 dark:text-gray-100 font-sans">
+        Company Profile Review
+      </h2>
 
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Left Panel */}
+        {/* LEFT PANEL */}
         <div className="md:w-1/3 bg-white dark:bg-slate-900 rounded-xl p-6 shadow text-center">
           <img
             src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=987&auto=format&fit=crop"
@@ -89,36 +103,36 @@ const CompanyRequestView = () => {
               <span>{company.serviceArea}</span>
             </div>
             <div className="flex justify-between">
-              <span><i className="ri-building-4-line"></i>Business</span>
+              <span><i className="ri-building-4-line mr-1"></i>Business</span>
               <span>{company.contactPerson}</span>
             </div>
             <div className="flex justify-between">
-              <span><i className="ri-phone-line"></i>Phone</span>
+              <span><i className="ri-phone-line mr-1"></i>Phone</span>
               <span>{company.phone}</span>
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* ACTION BUTTONS */}
           <div className="flex gap-6 justify-center mt-4 pb-6">
             <button className="px-6 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">Approve</button>
             <button className="px-6 py-2 bg-red-700 text-white rounded hover:bg-red-800 transition">Decline</button>
           </div>
         </div>
 
-        {/* Right Panel */}
+        {/* RIGHT PANEL */}
         <div className="md:w-2/3 bg-white dark:bg-slate-900 rounded-xl shadow overflow-hidden">
-          <div className="flex items-center justify-between mb-4 border-b">
-            {['profileoverview', 'documents'].map((tab) => (
+          <div className="flex border-b">
+            {tabs.map(tab => (
               <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`w-1/2 text-center py-3 font-bold text-sm ${
-                  activeTab === tab
-                    ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                    : 'text-gray-500 hover:text-blue-600'
+                key={tab.key}
+                onClick={() => setActivetab(tab.key)}
+                className={`w-1/2 text-center py-3 font-bold text-sm transition ${
+                  activeTab === tab.key
+                    ? "text-blue-600 border-b-2 border-blue-600 bg-blue-50"
+                    : "text-gray-500 hover:text-blue-600"
                 }`}
               >
-                {tab === 'profileoverview' ? 'Profile Overview' : 'Documents'}
+                {tab.label}
               </button>
             ))}
           </div>
@@ -128,11 +142,11 @@ const CompanyRequestView = () => {
         </div>
       </div>
 
-      {/* Back Button */}
+      {/* BACK BUTTON */}
       <div className="mt-4 text-right">
         <button
-          onClick={() => window.history.back()}
-          className="bg-gray-700 text-white px-6 py-2 rounded hover:bg-slate-900 transition"
+          onClick={() => navigate(-1)}
+          className="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-900 transition"
         >
           Back
         </button>

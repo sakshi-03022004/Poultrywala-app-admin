@@ -33,8 +33,8 @@ const TraderRegistration = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto p-4 bg-white rounded shadow overflow-y-auto max-h-[90vh] dark:bg-slate-800">
-      <h2 className="text-3xl font-semibold mb-2 text-center dark:text-gray-100">Trader Registration</h2>
+    <div className="max-w-[1000px] mx-auto p-3 bg-white rounded shadow  dark:bg-slate-800">
+      <h2 className="text-2xl font-semibold mb-2 text-center dark:text-gray-100">Trader Registration</h2>
 
       <Formik
         initialValues={initialValues}
@@ -63,12 +63,12 @@ const TraderRegistration = () => {
         }}
       >
         {({ setFieldValue }) => (
-          <Form className="space-y-4">
+          <Form className="space-y-1.5">
 
             {/* Personal Information */}
             <fieldset className="border p-1 rounded">
-              <legend className="text-base font-semibold mb-1">Personal Information</legend>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <legend className="text-sm font-medium px-1">Personal Information</legend>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
                 <TextField label="Full Name" name="name" />
                 <TextField label="Contact Number" name="contact" type="tel" />
                 <TextField label="Email Address" name="email" type="email" />
@@ -77,22 +77,22 @@ const TraderRegistration = () => {
             </fieldset>
 
             {/* Business Info */}
-            <fieldset className="border p-2 rounded">
-              <legend className="text-xl font-semibold mb-1">Address Details</legend>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <TextField  className=" w-1/2" label="Business Name" name="businessName" />
-                <TextField  className=" w-1/2" label="Licence Number" name="licence" />
-                <TextField  className=" w-1/2" label="GST Number" name="gst" />
-                <TextField  className=" w-1/2" label="City" name="city" />
-                <TextField  className=" w-1/2" label="State" name="state" />
-                <TextField  className=" w-1/2" label="PIN Code" name="pin" />
+            <fieldset className="border p-1 rounded mt-1.5">
+              <legend className="text-sm font-medium px-1">Address Details</legend>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                <TextField  label="Business Name" name="businessName" />
+                <TextField  label="Licence Number" name="licence" />
+                <TextField  label="GST Number" name="gst" />
+                <TextField  label="City" name="city" />
+                <TextField  label="State" name="state" />
+                <TextField  label="PIN Code" name="pin" />
               </div>
             </fieldset>
 
             {/* Bank Info */}
-            <fieldset className="border p-2 rounded">
-              <legend className="text-xl font-semibold mb-1">Bank Details</legend>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <fieldset className="border p-1 rounded mt-1.5">
+              <legend className="text-sm font-medium px-1">Bank Details</legend>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
                 <TextField label="Account Number" name="accountNumber" />
                 <TextField label="IFSC Code" name="ifscCode" />
                 <TextField label="Bank Holder Name" name="bankHolderName" />
@@ -102,16 +102,16 @@ const TraderRegistration = () => {
             </fieldset>
 
             {/* Documents Upload */}
-            <fieldset className="border p-2 rounded">
-              <legend className="text-xl font-semibold mb-1">Upload Documents</legend>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <fieldset className="border p-1 rounded mt-1.5">
+              <legend className="text-sm font-medium px-1">Upload Documents</legend>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
                 <FileUpload label="Upload Aadharcard" name="adharcard" onChange={handleFileChange} setFieldValue={setFieldValue} />
                 <FileUpload label="Upload Business Licence" name="businessLicence" onChange={handleFileChange} setFieldValue={setFieldValue} />
                 <FileUpload label="Upload Address Proof (PAN)" name="addressProof" onChange={handleFileChange} setFieldValue={setFieldValue} />
               </div>
             </fieldset>
 
-            <button type="submit" className="w-full bg-blue-600 text-white mt-4 py-1 rounded hover:bg-blue-700">
+            <button type="submit" className="w-full bg-green-600 text-white mt-2 py-1 rounded hover:bg-green-700 text-sm">
               Register
             </button>
           </Form>
@@ -131,30 +131,30 @@ const TextField = ({ label, name, type = 'text' }) => {
 
   return (
     <div className="flex flex-col">
-      <label className="mb-1 font-medium">{label}</label>
+      <label className="mb-0.5 text-xs">{label}</label>
       <Field
         name={name}
         type={type}
-        className="px-4 py-2 border rounded focus:outline-none focus:ring"
+        className="px-2 py-1 border rounded focus:outline-none focus:ring-1 focus:ring blue-500"
         placeholder={`Enter ${label.toLowerCase()}`}
         onKeyPress={handleKey}
       />
-      <ErrorMessage name={name} component="div" className="text-red-500 text-sm mt-1" />
+      <ErrorMessage name={name} component="div" className="text-red-500 text-[0.65rem] mt-0.5" />
     </div>
   );
 };
 
 const FileUpload = ({ label, name, onChange, setFieldValue }) => (
   <div className="flex flex-col">
-    <label className="mb-1 font-medium">{label}</label>
+    <label className="mb-0.5 text-xs">{label}</label>
     <input
       type="file"
       name={name}
       accept=".pdf,.jpg,.jpeg,.png"
       onChange={(e) => onChange(setFieldValue, name, e)}
-      className="px-4 py-2 border rounded focus:outline-none focus:ring"
+      className="px-2 py-1 border rounded focus:outline-none focus:ring"
     />
-    <ErrorMessage name={name} component="div" className="text-red-500 text-sm mt-1" />
+    <ErrorMessage name={name} component="div" className="text-red-500 text-[0.65rem] mt-0.5" />
   </div>
 );
 

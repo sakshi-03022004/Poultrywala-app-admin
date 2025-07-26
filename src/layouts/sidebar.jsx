@@ -21,7 +21,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
     <aside
       ref={ref}
       className={cn(
-        "fixed z-[100] flex h-full w-[240px] flex-col overflow-x-hidden border-r border-slate-300 bg-white transition-all dark:border-slate-700 dark:bg-slate-900",
+        "fixed z-[100] flex h-full w-[200px] flex-col overflow-x-hidden border-r border-slate-300 bg-white transition-all dark:border-slate-700 dark:bg-slate-900",
         collapsed ? "md:w-[70px] md:items-center" : "md:w-[240px]",
         collapsed ? "max-md:-left-full" : "max-md:left-0"
       )}
@@ -41,7 +41,7 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
               <button
                 onClick={() => toggleGroup(navbarLink.title)}
                 className={cn(
-                  "sidebar-group-title flex items-center justify-between w-full text-left",
+                  "sidebar-group-title flex items-center  text-base justify-between w-full text-left",
                   collapsed && "md:w-[45px]"
                 )}
               >

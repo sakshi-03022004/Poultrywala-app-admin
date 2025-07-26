@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const statusColors = {
   "Verified On-Site": "bg-green-300 text-white-700",
-  "Pending": "bg-orange-200 text-yellow-700",
+  Pending: "bg-yellow-200 text-yellow-700",
   Declined: "bg-red-200 text-red-700",
 };
 
@@ -25,6 +25,7 @@ export const mockCompanies = [
     productionVolume: "10000 tons/year",
     serviceArea: "North India",
     documents: ["pan.pdf", "gst.pdf", "bank_statement.pdf"],
+    documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
     verified: "Approved",
     about:
       "AgroFresh Pvt Ltd is a leading agricultural company specializing in modern and organic farming practices. Established in 2005, the company manages over 50 farms and produces a variety of crops, vegetables, and fruits that are distributed across Northern India. Their mission is to enhance food quality through sustainable and innovative farming solutions.",
@@ -46,6 +47,8 @@ export const mockCompanies = [
     productionVolume: "4500 tons/year",
     serviceArea: "Delhi NCR",
     documents: ["pan.pdf", "license.pdf", "gst.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "Green Harvest Ltd is committed to promoting eco-friendly farming techniques while maintaining high productivity. With 20 operational farms, they supply organic produce to various cities in Delhi NCR and aim to support local farmers through training and employment.",
@@ -67,6 +70,8 @@ export const mockCompanies = [
     productionVolume: "12000 tons/year",
     serviceArea: "Pan India",
     documents: ["license.pdf", "pan.pdf", "gst.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Pending",
     about:
       "Bharat Agro Solutions is a large-scale farming company engaged in growing and distributing grains, cereals, and pulses across India. They integrate advanced technology and sustainable practices to meet the growing food demands of the country.",
@@ -88,6 +93,8 @@ export const mockCompanies = [
     productionVolume: "800 tons/year",
     serviceArea: "Gujarat",
     documents: ["license.pdf", "certificate.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "FreshRoots Organics focuses on cultivating purely organic vegetables and fruits. With a small team and limited but high-quality production, they target health-conscious consumers and local organic food markets in Gujarat.",
@@ -109,6 +116,8 @@ export const mockCompanies = [
     productionVolume: "3500 tons/year",
     serviceArea: "Uttar Pradesh",
     documents: ["pan.pdf", "gst.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Declined",
     about:
       "AgriGrow Co. supports local agriculture by providing both farming and distribution services to small-scale farmers. Their mission is to enhance farm productivity through affordable services and digital support.",
@@ -130,6 +139,8 @@ export const mockCompanies = [
     productionVolume: "9000 tons/year",
     serviceArea: "Rajasthan",
     documents: ["certificate.pdf", "gst.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "HarvestHub India is a large-scale farm management company working in Rajasthan, offering a network of farms that grow cereals and oilseeds. They utilize tech-enabled solutions for improving yield and managing resources efficiently.",
@@ -151,6 +162,8 @@ export const mockCompanies = [
     productionVolume: "1200 tons/year",
     serviceArea: "Tamil Nadu",
     documents: ["license.pdf", "tax_doc.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "Organic Bloom Farms is a small collective of farmers working to bring pesticide-free and naturally grown produce to markets in Tamil Nadu. They emphasize eco-conscious practices and have received multiple sustainability certifications.",
@@ -172,6 +185,8 @@ export const mockCompanies = [
     productionVolume: "11000 tons/year",
     serviceArea: "Bihar and Jharkhand",
     documents: ["pan.pdf", "address_proof.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Pending",
     about:
       "AgroTech Solutions empowers farmers by integrating IoT-based monitoring systems across 50+ farms. They ensure consistent quality and transparency in supply chains for grains, pulses, and oil crops.",
@@ -193,6 +208,8 @@ export const mockCompanies = [
     productionVolume: "4000 tons/year",
     serviceArea: "Assam and Northeast",
     documents: ["id_proof.pdf", "farm_license.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "Nature’s Basket is known for its high-altitude organic farming in Assam. They promote biodiversity, native crops, and green packaging for eco-conscious delivery throughout Northeast India.",
@@ -214,6 +231,8 @@ export const mockCompanies = [
     productionVolume: "13000 tons/year",
     serviceArea: "Haryana and Punjab",
     documents: ["gst.pdf", "insurance.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "FarmTech India specializes in large-scale, tech-driven agriculture. Their operations are spread across Haryana and Punjab, focusing on precision farming and automated irrigation for maximum yield.",
@@ -235,6 +254,8 @@ export const mockCompanies = [
     productionVolume: "1500 tons/year",
     serviceArea: "Madhya Pradesh",
     documents: ["pan.pdf", "license.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Declined",
     about:
       "Krishi Sathi Enterprises is a grassroots farming collective that brings together independent farmers in Madhya Pradesh. Their strength lies in collaborative decision-making and traditional farming wisdom.",
@@ -256,6 +277,8 @@ export const mockCompanies = [
     productionVolume: "15000 tons/year",
     serviceArea: "All India",
     documents: ["bank.pdf", "pan.pdf", "gst.pdf"],
+        documentUrl: "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRvY3VtZW50fGVufDB8fDB8fHww",
+
     verified: "Approved",
     about:
       "Harvest India Ltd is a national-level agro-industrial firm that manages a vast network of farms across India. Their primary focus is food security and efficient logistics, with exports to neighboring countries.",
@@ -264,11 +287,14 @@ export const mockCompanies = [
 
 
 
+
 export default function CompanyOnboarding() {
   const [search, setSearch] = useState("");
 
   const [District, setDistrict] = useState(null);
   const [state, setState] = useState("");
+
+  
   const navigate = useNavigate();
 
   const openCompanyRegistrationForm = () => {
@@ -350,7 +376,8 @@ export default function CompanyOnboarding() {
               <th className="p-4 text-center text-xs">Farms Managed</th>
               <th className="p-4 text-center text-xs">Production Volume</th>
               <th className="p-4 text-center text-xs">Service Area</th>
-              {/* <th className="p-4 text-center text-xs">Documents</th> */}
+              <th className="p-4 text-center text-xs">Documents</th> 
+
               <th className="p-4 text-center text-xs">Verification</th>
               <th className="p-4 text-center text-xs text-center">Action</th>
             </tr>
@@ -364,16 +391,17 @@ export default function CompanyOnboarding() {
                 <td className="p-4 text-center">{company.farmsManaged}</td>
                 <td className="p-4 text-center">{company.productionVolume}</td>
                 <td className="p-4 text-center">{company.serviceArea}</td>
-                {/* <td className="p-4 text-center">
+                <td className="p-4 text-center">
                   <button
-                    onClick={() => setDistrict(company)}
+                    onClick={() => navigate(`/company-request-view/${company.id}?tab=documents`) }
                     className="text-blue-600 hover:underline"
                   >
-                    View Documents
+                    View
                   </button>
-                </td> */}
+                </td> 
                 <td className="p-4 text-center">
-                  <span className={`px-2 py-1 rounded-full text-xs text-center font-medium ${statusColors[company.verified]}`}>{company.verified}</span>
+                  <span className={`px-2 py-1 rounded-full text-xs text-center font-medium ${statusColors[company.verified]}`}>
+                    {company.verified}</span>
                 </td>
                 <td className="p-4 text-center">
                   <div className="font-medium flex gap-1 justify-center">
